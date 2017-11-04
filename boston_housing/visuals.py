@@ -2,19 +2,18 @@
 # Suppress matplotlib user warnings
 # Necessary for newer version of matplotlib
 import warnings
+warnings.filterwarnings("ignore", category = UserWarning, module = "matplotlib")
+#
+# Display inline matplotlib plots with IPython
+from IPython import get_ipython
+get_ipython().run_line_magic('matplotlib', 'inline')
+###########################################
+
 import matplotlib.pyplot as pl
 import numpy as np
 import sklearn.learning_curve as curves
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.cross_validation import ShuffleSplit, train_test_split
-# Display inline matplotlib plots with IPython
-from IPython import get_ipython
-
-warnings.filterwarnings("ignore", category = UserWarning, module = "matplotlib")
-
-get_ipython().run_line_magic('matplotlib', 'inline')
-###########################################
-
 
 def ModelLearning(X, y):
     """ Calculates the performance of several models with varying sizes of training data.
@@ -30,7 +29,7 @@ def ModelLearning(X, y):
     fig = pl.figure(figsize=(10,7))
 
     # Create three different models based on max_depth
-    for k, depth in enumerate([10, 11, 12, 13]):
+    for k, depth in enumerate([1,3,6,10]):
         
         # Create a Decision tree regressor at max_depth = depth
         regressor = DecisionTreeRegressor(max_depth = depth)
@@ -114,7 +113,8 @@ def PredictTrials(X, y, fitter, data):
 
     for k in range(10):
         # Split the data
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=k)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, \
+            test_size = 0.2, random_state = k)
         
         # Fit the data
         reg = fitter(X_train, y_train)

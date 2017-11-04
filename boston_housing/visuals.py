@@ -30,7 +30,7 @@ def ModelLearning(X, y):
     fig = pl.figure(figsize=(10,7))
 
     # Create three different models based on max_depth
-    for k, depth in enumerate([1,3,6,10]):
+    for k, depth in enumerate([10, 11, 12, 13]):
         
         # Create a Decision tree regressor at max_depth = depth
         regressor = DecisionTreeRegressor(max_depth = depth)

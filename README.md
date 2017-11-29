@@ -15,6 +15,7 @@
   - tensorflow 
   - keras
   - h5py
+  - skimage
 - jupyter
 
 clone the project

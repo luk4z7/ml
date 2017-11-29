@@ -11,11 +11,20 @@
   - sklearn
   - matplotlib
   - ipython
+  - scikit-image
+  - tensorflow 
+  - keras
+  - h5py
 - jupyter
 
 clone the project
 ```bash
 git clone https://github.com/luk4z7/ml
+```
+
+Install dependencies
+```bash
+pip install -r requirements.txt --user
 ```
 
 Execute notebook jupyter

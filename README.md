@@ -16,7 +16,7 @@
   - keras
   - h5py
   - skimage
-- jupyter
+  - jupyter
 
 clone the project
 ```bash

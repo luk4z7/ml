@@ -17,6 +17,7 @@
   - h5py
   - skimage
   - jupyter
+  - Pillow
 
 clone the project
 ```bash
@@ -25,12 +26,25 @@ git clone https://github.com/luk4z7/ml
 
 Install dependencies
 ```bash
+cd ml
+
 pip install -r requirements.txt --user
 ```
 
 Execute notebook jupyter
 ```bash
-cd ml
-
 jupyter notebook --allow-root
 ```
+
+## docker
+
+```bash
+docker pull jupyter/datascience-notebook
+```
+
+```bash
+cd ml
+
+docker run -d --rm -p  10000:8888 -v "$PWD":/home/jovyan/work jupyter/datascience-notebook
+```
+

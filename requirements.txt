@@ -9,3 +9,5 @@ keras
 h5py
 jupyter
 skimage
+h5py
+Pillow
